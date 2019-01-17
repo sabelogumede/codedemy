@@ -1,0 +1,41 @@
+var mongoose = require('mongoose');
+
+var UserSchema = new mongoose.Schema({
+    /*
+    -email
+    -profile
+        name-picture
+
+        courses that the user is teaching
+        courses that the user is taking
+    */
+   email: {
+   		type: String,
+   		unique: true,
+   		lowercase: true
+   	},
+   	profile: {
+   		name: {
+   			type: String,
+   			default: ''
+   		},
+   		picture: {
+   			type: String,
+   			default: ''
+   		}
+   	},
+   	coursesTeach: [{
+   		course: {
+   			type: Schema.Types.ObjectId,
+   			ref: 'Course'
+   		}
+   	}],
+   	coursesTaken: [{
+   		course: {
+   			type: Schema.Types.ObjectId,
+   			ref: 'Course'
+   		}
+   	}],
+});
+
+module.exports = mongoose.model('User', UserSchema);
