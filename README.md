@@ -1,5 +1,6 @@
 # codedemy
-# clone project
-# on your localmachine...cd project file
-# npm install
-# node/nodemon server (run the project)
+clone project
+on your local machine...cd project file
+npm install
+connect your db (I used mlab)
+node/nodemon server (run the project)
