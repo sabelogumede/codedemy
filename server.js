@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 
 var app = express();
 
+// require config/secret file
 var secret = require('./config/secret');
 
 // connect to our db - m-lab
