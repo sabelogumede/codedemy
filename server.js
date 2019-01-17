@@ -22,10 +22,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
 app.use(morgan('dev'));
 
-// router
-app.get('/', function(req, res, next){
-    res.json('home')
-});
+// import local router files
+require('./routes/main')(app);
+
 
 
 
