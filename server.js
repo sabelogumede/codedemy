@@ -1,19 +1,18 @@
-const express = require('express');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const mongoose = require('mongoose');
+var express = require('express');
+var bodyParser = require('body-parser');
+var morgan = require('morgan');
+var mongoose = require('mongoose');
 
-const app = express();
+var app = express();
 
-//import local files "modules"
-const secret = require('./config/secret');
+var secret = require('./config/secret');
 
 // connect to our db - m-lab
-mongoose.connect('secret.database', function(err){
+mongoose.connect(secret.database, function(err){
     if (err) {
         console.log(err);
     } else {
-        console.log("Connected to the database");
+        console.log("Connected to the db");
     }
 });
 
@@ -24,8 +23,6 @@ app.use(morgan('dev'));
 
 // import local router files
 require('./routes/main')(app);
-
-
 
 
 
